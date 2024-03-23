@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Дни рождения</h1>
+{% for item in bdays%}
+<div class="col-md6 border rounded">
+    <div>
+        ФИО - <b>{{item.fio}}</b>
+    </div>
+        <div>
+            Дата рождения - <b>{{item.dt}}</b>
+        <div>
+            <a href="/bdays_delete/{{ item.id }}" class="btn btn-danger">
+                Удалить
+            </a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
